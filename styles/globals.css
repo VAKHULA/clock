@@ -73,5 +73,3 @@ span::before {
 span::after {
   transform: rotate(var(--angle-2));
 }
-
-git remote add origin https://github.com/VAKHULA/clock.git

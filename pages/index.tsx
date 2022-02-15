@@ -303,12 +303,15 @@ const Home: NextPage = () => {
   const update = () => {
 
     const date = new Date();
+	// @ts-ignore
 	const [h1, h2] = date.getHours().toString().padStart(2, "0");
+	// @ts-ignore
 	const [m1, m2] = date.getMinutes().toString().padStart(2, "0");
+	// @ts-ignore
   const [s1, s2] = date.getSeconds().toString().padStart(2, "0");
 
 	const time = [h1, h2, m1, m2, s1, s2];
-
+// @ts-ignore
   setTime(time)
   }
 
@@ -328,6 +331,7 @@ const Home: NextPage = () => {
           <div key={idx1} className="watch-circle-container" >
           {[...Array(24)].map((y, idx2) => (
             <span key={idx2} style={{
+				// @ts-ignore
               "--angle-1":  `${digits[time[idx1]][idx2][0]}deg`,
               "--angle-2":  `${digits[time[idx1]][idx2][1]}deg`,
               }}
