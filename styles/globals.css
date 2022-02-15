@@ -32,12 +32,15 @@ body {
 
 
 .watch-container {
-  display: grid;
-  grid-template-columns: repeat(2, calc(var(--circle-x) * var(--circle-size)));
-  grid-template-rows: repeat(2, calc(var(--circle-y) * var(--circle-size)));
+  display: flex;
+  flex-direction: row;
+  /* grid-template-columns: repeat(2, calc(var(--circle-x) * var(--circle-size)));
+  grid-template-rows: repeat(2, calc(var(--circle-y) * var(--circle-size))); */
   margin-top: 2rem;
 }
-
+.watch-circle-container:nth-child(2n) {
+margin-right: 4rem;
+}
 .watch-circle-container {
   display: grid;
   grid-template-columns: repeat(var(--circle-x), var(--circle-size));

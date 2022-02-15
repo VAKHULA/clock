@@ -297,22 +297,20 @@ const useInterval = (callback: () => void, delay: number | null) => {
 
 }
 const Home: NextPage = () => {
-  const [time, setTime] = useState([])
+  const [time, setTime] = useState(["0","0","0","0","0","0"])
 
 
   const update = () => {
 
     const date = new Date();
-	// @ts-ignore
-	const [h1, h2] = date.getHours().toString().padStart(2, "0");
-	// @ts-ignore
-	const [m1, m2] = date.getMinutes().toString().padStart(2, "0");
-	// @ts-ignore
-  const [s1, s2] = date.getSeconds().toString().padStart(2, "0");
+
+	const [h1, h2] = date.getHours().toString().padStart(2, "0").split('');
+	const [m1, m2] = date.getMinutes().toString().padStart(2, "0").split('');
+    const [s1, s2] = date.getSeconds().toString().padStart(2, "0").split('');
 
 	const time = [h1, h2, m1, m2, s1, s2];
-// @ts-ignore
-  setTime(time)
+
+    setTime(time)
   }
 
   useInterval(update, 1000)
@@ -331,7 +329,7 @@ const Home: NextPage = () => {
           <div key={idx1} className="watch-circle-container" >
           {[...Array(24)].map((y, idx2) => (
             <span key={idx2} style={{
-				// @ts-ignore
+					// @ts-ignore
               "--angle-1":  `${digits[time[idx1]][idx2][0]}deg`,
               "--angle-2":  `${digits[time[idx1]][idx2][1]}deg`,
               }}
