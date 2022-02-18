@@ -47,7 +47,7 @@ margin-right: 4rem;
   grid-template-rows: repeat(var(--circle-y), var(--circle-size));
 }
 
-span {
+span.clock {
   font-size: var(--circle-size);
   width: 1em;
   height: 1em;
@@ -58,7 +58,7 @@ span {
   background-color: #eee;
   overflow: hidden;
 }
-span:before, span::after {
+span.clock:before, span.clock::after {
   content: "";
   position: absolute;
   left: 0;
@@ -70,9 +70,9 @@ span:before, span::after {
   transition: .7s;
   transform-origin: bottom;
 }
-span::before {
+span.clock::before {
   transform: rotate(var(--angle-1));
 }
-span::after {
+span.clock::after {
   transform: rotate(var(--angle-2));
 }
