@@ -10,12 +10,24 @@ const Clock: FC<{time:string[]}> = ({ time }) => {
           {[...Array(24)].map((y, clockIdx) => {
             const digitNum = time[idx1]
             return (
-              <span key={clockIdx} className='clock' style={{
-                "--angle-1": `${DIGITS[digitNum][clockIdx][0]}deg`,
-                "--angle-2": `${DIGITS[digitNum][clockIdx][1]}deg`,
-                }}
-            />
-            )
+              <span
+                key={clockIdx}
+                className="clock"
+              >
+                <span
+                  className="arrow1"
+                  style={{
+                    transform: `rotate(${DIGITS[digitNum][clockIdx][0]}deg)`,
+                  }}
+                />
+                <span
+                  className="arrow2"
+                  style={{
+                    transform: `rotate(${DIGITS[digitNum][clockIdx][1]}deg)`,
+                  }}
+                />
+              </span>
+            );
           })}
       </div>
         ))}

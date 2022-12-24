@@ -41,6 +41,21 @@ body {
 .watch-circle-container:nth-child(2n) {
 margin-right: 4rem;
 }
+.watch-circle-container:nth-child(2) {
+
+  position: relative;
+  margin-bottom: 2rem;
+
+  }
+.watch-circle-container:nth-child(2)::before {
+  content: 'Hours';
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  z-index: 2;
+  right: 2rem;
+  text-align: right;
+  }
 .watch-circle-container {
   display: grid;
   grid-template-columns: repeat(var(--circle-x), var(--circle-size));
@@ -58,8 +73,9 @@ span.clock {
   background-color: #eee;
   overflow: hidden;
 }
-span.clock:before, span.clock::after {
-  content: "";
+
+.arrow1, .arrow2 {
+  display: block;
   position: absolute;
   left: 0;
   right: 0;
@@ -70,9 +86,12 @@ span.clock:before, span.clock::after {
   transition: .7s;
   transform-origin: bottom;
 }
-span.clock::before {
-  transform: rotate(var(--angle-1));
+.arrow2 { height: calc(var(--circle-size) / 2);}
+
+.arrow1 {
+  /* transform: rotate(var(--angle-1)); */
 }
-span.clock::after {
-  transform: rotate(var(--angle-2));
+
+.arrow2 {
+  /* transform: rotate(var(--angle-2)); */
 }
